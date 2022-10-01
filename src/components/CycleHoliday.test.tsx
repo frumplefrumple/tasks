@@ -27,9 +27,10 @@ describe("CycleHoliday Component tests", () => {
         const alphabetButton = screen.getByRole("button", {
             name: /Alphabet/i
         });
-        const initialHoliday = screen.getByText(/Holiday ?[:)-](.*)/i);
+        let initialHoliday = screen.getByText(/Holiday ?[:)-](.*)/i);
         const states: string[] = [];
         for (let i = 0; i < 6; i++) {
+            initialHoliday = screen.getByText(/Holiday ?[:)-](.*)/i);
             states.push(initialHoliday.textContent || "");
             alphabetButton.click();
         }
@@ -42,9 +43,10 @@ describe("CycleHoliday Component tests", () => {
         const yearButton = screen.getByRole("button", {
             name: /Year/i
         });
-        const initialHoliday = screen.getByText(/Holiday ?[:)-](.*)/i);
+        let initialHoliday = screen.getByText(/Holiday ?[:)-](.*)/i);
         const states: string[] = [];
         for (let i = 0; i < 6; i++) {
+            initialHoliday = screen.getByText(/Holiday ?[:)-](.*)/i);
             states.push(initialHoliday.textContent || "");
             yearButton.click();
         }
